@@ -1,9 +1,13 @@
 image: node
 
 stages:
-  - test
   - build
+  - test
   - deploy
+
+cache:
+  paths:
+    - ./website/build
 
 compilação:
   stage: build
@@ -18,3 +22,10 @@ compilação:
     - cd website
     - npm install
     - npm run build
+
+deploy:
+  stage: deploy
+
+  script:
+    - npm install -g surge
+    - surge --project ./website/build/test-site --domain aloof-garden.surge.sh
