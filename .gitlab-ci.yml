@@ -1,0 +1,10 @@
+stages:
+  -build
+
+compilação:
+  stage: build
+  script:
+    - ls -ltra
+    - pwd
+    - whoami
+    - npm --version
