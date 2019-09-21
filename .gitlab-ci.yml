@@ -7,6 +7,11 @@ stages:
 
 compilação:
   stage: build
+
+  artifacts:
+    paths:
+      - ./website/build/test-site
+
   script:
     - cd website
     - npm install
