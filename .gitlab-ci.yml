@@ -9,6 +9,8 @@ compilação:
   stage: build
 
   artifacts:
+    name: "$CI_JOB_NAME - $CI_COMMIT_REF_NAME"
+    when: always
     paths:
       - ./website/build/test-site
 
