@@ -8,7 +8,6 @@ stages:
 compilação:
   stage: build
   script:
-    - ls -ltra
-    - pwd
-    - whoami
-    - npm --version
+    - cd website
+    - npm install
+    - npm run build
